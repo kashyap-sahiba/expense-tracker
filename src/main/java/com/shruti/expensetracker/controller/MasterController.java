@@ -24,4 +24,11 @@ public class MasterController {
         return mav;
     }
 
+    @RequestMapping("/expense")
+    public ModelAndView addExpense() {
+        ModelAndView mav = new ModelAndView("expense");
+        mav.addObject("expense", new Expense());
+        return mav;
+    }
+
 }
