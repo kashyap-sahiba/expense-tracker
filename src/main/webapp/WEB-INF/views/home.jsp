@@ -21,6 +21,7 @@
 		<div>
 			<h3>${expense.expensename}</h3>
 			<p>&#8377;${expense.amount}</p>
+			<a href="${contextRoot}/expense/${expense.id}">Edit</a>
 		</div>
 
 	</c:forEach>

@@ -5,6 +5,7 @@ import com.shruti.expensetracker.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,6 +38,11 @@ public class MasterController {
     public String save(@ModelAttribute("expense") Expense expense) {
         expenseService.save(expense);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/expense/{id}", method = RequestMethod.POST)
+    public String edit(@PathVariable("id") Long id) {
+       return "redirect:/";
     }
 
 }
