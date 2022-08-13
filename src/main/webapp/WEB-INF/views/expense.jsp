@@ -15,8 +15,9 @@
 
 <form:form action = "${contextRoot}/expense" method="post" modelAttribute="expense">
 
+      <form:hidden path="id"/>
       <form:input path="expensename" placeholder="Enter expense name"/>
-      <form:input path="amount" placeholder="Enter expense amount"/>
+      <form:input path="amount" placeholder="Enter expense amount  "/>
       <form:textarea path="note" placeholder="Enter note(optional)"  />
 
       <button type="submit"> Add Expense </button>
