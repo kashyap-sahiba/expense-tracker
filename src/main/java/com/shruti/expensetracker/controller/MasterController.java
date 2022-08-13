@@ -48,5 +48,10 @@ public class MasterController {
        return mav;
     }
 
+    @RequestMapping(value = "/expense/{id}/delete")
+    public String delete(@PathVariable("id") Long id) {
+        return "";
+    }
+
 
 }
