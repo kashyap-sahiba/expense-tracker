@@ -1,29 +1,33 @@
 package com.shruti.expensetracker.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.Instant;
 
 @Entity
-@Table(name="tbl_expenses")
-@Setter
-@Getter
-@ToString
+@NoArgsConstructor
+@Data
+@Table(name="expense")
 public class Expense {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="description")
-    private String expensename;
+    private Instant expensedate;
 
-    private BigDecimal amount;
+    private String description;
 
-    private String note;
+    private String location;
 
-    private Long createdAt;
+    @ManyToOne
+    private Category category;
+
+    @JsonIgnore
+    @ManyToOne
+    private User user;
+
 
 }

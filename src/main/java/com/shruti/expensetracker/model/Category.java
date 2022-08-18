@@ -15,12 +15,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Data
-@Table(name = "category")
+@Table(name="category")
 public class Category {
     @Id
     private Long id;
 
     private String name;
+
+
+
 }
 
 
